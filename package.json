@@ -27,6 +27,6 @@
     "space": 2
   },
   "engines": {
-    "node": "> 10"
+    "node": ">= 10"
   }
 }
