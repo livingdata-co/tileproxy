@@ -14,7 +14,7 @@ const app = express()
 const cache = new Keyv('sqlite://cache.sqlite')
 
 app.disable('x-powered-by')
-app.use(cors())
+app.use(cors({origin: true}))
 
 if (process.env.NODE_ENV !== 'production') {
   app.use(morgan('dev'))
