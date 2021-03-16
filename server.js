@@ -56,7 +56,10 @@ tiles.forEach(tileService => {
 
     const resolver = new HttpResolver(tileService.resolver.url, tileService.resolver.headers || {})
     const tile = await resolver.getTile(z, x, y)
-    await cache.set(key, tile)
+
+    cache.set(key, tile).catch(error => {
+      console.error(error)
+    })
 
     res.sendTile(tile.data)
   }))
