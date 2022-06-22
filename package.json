@@ -15,7 +15,7 @@
     "@livingdata/keyv-sqlite": "^2.1.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "got": "^9.6.0",
+    "got": "^11.8.5",
     "js-yaml": "^3.13.1",
     "morgan": "^1.9.1"
   },
