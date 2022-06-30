@@ -11,12 +11,12 @@
     "lint": "xo"
   },
   "dependencies": {
-    "@livingdata/keyv": "^4.1.0",
-    "@livingdata/keyv-sqlite": "^2.1.0",
+    "@keyv/sqlite": "^3.5.2",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "got": "^9.6.0",
     "js-yaml": "^3.13.1",
+    "keyv": "^4.3.2",
     "morgan": "^1.9.1"
   },
   "devDependencies": {

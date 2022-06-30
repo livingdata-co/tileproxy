@@ -2,7 +2,7 @@ const {readFileSync} = require('fs')
 const express = require('express')
 const cors = require('cors')
 const morgan = require('morgan')
-const Keyv = require('@livingdata/keyv')
+const Keyv = require('keyv')
 const {safeLoad} = require('js-yaml')
 const HttpResolver = require('./lib/resolvers/http')
 
