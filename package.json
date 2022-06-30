@@ -20,11 +20,14 @@
     "morgan": "^1.10.0"
   },
   "devDependencies": {
-    "xo": "^0.25.3"
+    "xo": "^0.50.0"
   },
   "xo": {
     "semicolon": false,
-    "space": 2
+    "space": 2,
+    "rules": {
+      "unicorn/prevent-abbreviations": "off"
+    }
   },
   "engines": {
     "node": ">= 16"

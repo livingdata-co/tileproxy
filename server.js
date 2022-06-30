@@ -1,4 +1,7 @@
+#!/usr/bin/env node
 import {readFileSync} from 'node:fs'
+import process from 'node:process'
+
 import express from 'express'
 import cors from 'cors'
 import morgan from 'morgan'
@@ -33,7 +36,7 @@ function w(handler) {
   }
 }
 
-tiles.forEach(tileService => {
+for (const tileService of tiles) {
   app.use(`/${tileService.name}/tiles`, (req, res, next) => {
     res.sendTile = tileData => {
       res
@@ -64,6 +67,6 @@ tiles.forEach(tileService => {
 
     res.sendTile(tile.data)
   }))
-})
+}
 
 app.listen(process.env.PORT || 5000)
