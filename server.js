@@ -1,10 +1,11 @@
-const {readFileSync} = require('fs')
-const express = require('express')
-const cors = require('cors')
-const morgan = require('morgan')
-const Keyv = require('keyv')
-const yaml = require('js-yaml')
-const HttpResolver = require('./lib/resolvers/http')
+import {readFileSync} from 'node:fs'
+import express from 'express'
+import cors from 'cors'
+import morgan from 'morgan'
+import Keyv from 'keyv'
+import {load as loadYamlFile} from 'js-yaml'
+
+import HttpResolver from './lib/resolvers/http.js'
 
 const ONE_HOUR = 60 * 60
 const ONE_DAY = 24 * ONE_HOUR
@@ -20,7 +21,7 @@ if (process.env.NODE_ENV !== 'production') {
   app.use(morgan('dev'))
 }
 
-const tiles = yaml.load(readFileSync('./tiles.yml'))
+const tiles = loadYamlFile(readFileSync('./tiles.yml'))
 
 function w(handler) {
   return async (req, res, next) => {

@@ -2,7 +2,7 @@
   "name": "@livingdata/tileproxy",
   "version": "0.0.0",
   "description": "Proxy-based tile server",
-  "main": "index.js",
+  "type": "module",
   "repository": "https://github.com/livingdata-co/tileproxy",
   "author": "Jérôme Desboeufs <jerome@livingdata.co>",
   "license": "MIT",
