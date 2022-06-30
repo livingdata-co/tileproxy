@@ -3,7 +3,7 @@ const express = require('express')
 const cors = require('cors')
 const morgan = require('morgan')
 const Keyv = require('keyv')
-const {safeLoad} = require('js-yaml')
+const yaml = require('js-yaml')
 const HttpResolver = require('./lib/resolvers/http')
 
 const ONE_HOUR = 60 * 60
@@ -20,7 +20,7 @@ if (process.env.NODE_ENV !== 'production') {
   app.use(morgan('dev'))
 }
 
-const tiles = safeLoad(readFileSync('./tiles.yml'))
+const tiles = yaml.load(readFileSync('./tiles.yml'))
 
 function w(handler) {
   return async (req, res, next) => {
