@@ -55,7 +55,7 @@ for (const tileService of tiles) {
 
     const cachedTile = await cache.get(key)
     if (cachedTile) {
-      return res.sendTile(cachedTile.data)
+      return res.set('X-Proxy-Cache', 'HIT').sendTile(cachedTile.data)
     }
 
     const resolver = new HttpResolver(tileService.resolver.url, tileService.resolver.headers || {})
@@ -65,7 +65,7 @@ for (const tileService of tiles) {
       console.error(error)
     })
 
-    res.sendTile(tile.data)
+    res.set('X-Proxy-Cache', 'MISS').sendTile(tile.data)
   }))
 }
 
